@@ -94,7 +94,7 @@ public class Application extends Controller {
         use.save();
 
         majibu.put("message","user created successfully");
-        majibu.put("message",200);
+        majibu.put("code",200);
         return ok(majibu);
     }
 
@@ -121,7 +121,7 @@ public class Application extends Controller {
             session("username",userFromDb.username);
             result.put("message", "logged in successfully");
             result.put("code", 200);
-            return toDoCategories();
+            return ok(result);
         } else {
             result.put("message", "user not found");
             result.put("code", 201);
