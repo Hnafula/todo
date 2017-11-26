@@ -1,0 +1,38 @@
+@(title: String)
+@main(title){
+      <div class ="container">
+        <button type="button" class="btn btn-default btn-lg btn btn-primary" >
+          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+        </button>
+        <div class="row">
+          <h3 class = "text-warning bg-success text-center">To Do categories</h3>
+          <a href="/addCategory" class="btn btn-info btn-sm pull-right"><i class="glyphicon glyphicon-plus"> Add</i></a>
+
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr class="primary">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Details</th>
+                <th>edit</th>
+                <th>Delete</th>
+                <th>view</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for(category <- Categories.findAllCategories()){
+                <tr class="warning">
+                  <td>@category.id</td>
+                  <td>@category.categoryname</td>
+                  <td>@category.categorydetails</td>
+                  <td><a href="/editCategory?id=@category.id"><input type="button" value ="edit" class="btn btn-primary"></a></td>
+                  <td><a href="/deleteCategory?id=@category.id "><input type="button" value ="delete" class="btn btn-primary"></a></td>
+                  <td><a href="/traveltodoItems"><input type="submit" value ="view item" class="btn btn-warning"></a></td>
+                </tr>
+              }
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+}

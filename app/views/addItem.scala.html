@@ -1,0 +1,44 @@
+@(title: String)
+@main(title){
+    <div class ="container">
+    <h3>add item</h3>
+    <form name ="form2" method ="post" class="form horizontal" action = "/add_item">
+
+        <div class ="row">
+            <div class = "col-sm-6">
+                <div class = "form-group">
+                    <label for ="CategoryID" class ="label label-default">CategoryID:</label>
+                   <!-- <input type ="number" name="categoryID" id ="categoryID" class ="form-control">-->
+                    <select name="categoryid" id="cat" class ="form-control">
+                        @for(category <- Categories.findAllCategories()){
+                            <option value="@category.id">@category.categoryname</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class ="row">
+            <div class = "col-sm-6">
+                <div class = "form-group">
+                    <label for ="name" class ="label label-default">Name:</label>
+                    <input type ="text" name="name" id ="name"class ="form-control">
+                </div>
+            </div>
+        </div>
+
+        <div class ="row">
+            <div class = "col-sm-6">
+                <div class = "form-group">
+                    <label for ="textarea" class="label label-default">Description:</label>
+                    <textarea cols ="76%" rows ="" name="textarea"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <br /><br />
+        <button type="submit" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-plus"> Submit</i></button>
+        <!-- <a href="home.html"><input type = "submit" value="submit" class="btn btn-primary"></a> -->
+    </form>
+
+</div>
+}

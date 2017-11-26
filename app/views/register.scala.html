@@ -1,0 +1,81 @@
+@(title: String)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <link rel="stylesheet" media="screen" href="@routes.Assets.at("css/bootstrap.min.css")">
+  <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+  <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+  </head>
+  <body>
+
+    <div class ="container">
+      <h1 class="text-danger">Register</h1>
+
+      <form name="frmReg" method ="POST" class = "form horizontal" action="/register">
+        <div class="row">
+          <div class = "col-sm-6">
+            <div class="form-group">
+              <!--<form name = "frmReg" id = "frmReg" method = "POST">-->
+                <label for ="name" class="label label-default">Name</label>
+                <input type ="text" name = "firstname" id ="firstName" class ="form-control" required/>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class = "col-sm-6">
+            <div class="form-group">
+              <label for ="name" class="label label-default">Email</label>
+              <input type ="email" name = "email" id ="email" class="form-control" required/>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class = "col-sm-6">
+            <div class="form-group">
+              <label for ="name" class ="label label-default">Confirm Email</label>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class = "col-sm-6">
+            <div class="form-group">
+              <label for ="name" class="label label-default">Password</label>
+              <input type ="password" name = "pass" id ="pass"  class="form-control" required/>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class = "col-sm-6">
+            <div class="form-group">
+              <label for ="name" class="label label-default">Pin</label>
+              <input type ="pin" name = "pin" id ="pin"  class="form-control" required/>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <button type ="submit" value ="submit" class="btn btn-primary">Register</button>
+
+      <p>Click on the link to log in</p>
+      @*<a href ="@routes.Application.index()">login</a>*@
+      <a href ="/">login</a>
+
+      </form>
+
+    </div>
+
+</body>
+</html>

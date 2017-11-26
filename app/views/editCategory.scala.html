@@ -1,0 +1,32 @@
+@(title: String, id: Long, editcat: Categories)
+@main(title){
+    <div class ="container">
+      <h3>Edit category</h3>
+      <form name ="form2" method ="post" class="form horizontal" action ="/editingCategory">
+
+        <div class ="row">
+          <div class = "col-sm-6">
+            <div class = "form-group">
+              <label for ="name" class ="label label-default">Name:</label>
+              <input type ="text" name="name" id ="name"class ="form-control" value="@editcat.categoryname">
+              <input type ="hidden" name="categoryid" id ="categoryid" class ="form-control" value="@editcat.id">
+            </div>
+          </div>
+        </div>
+
+        <div class ="row">
+          <div class = "col-sm-6">
+            <div class = "form-group">
+              <label for ="textare" class="label label-default">Description:</label>
+              <textarea cols ="76%" name ="description" rows ="" class ="form-control" >@editcat.categorydetails</textarea>
+            </div>
+          </div>
+        </div>
+
+        <br /><br />
+        <button type="submit" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-plus"> Submit</i></button>
+          <!-- <a href="home.html"><input type = "submit" value="submit" class="btn btn-primary"></a> -->
+      </form>
+
+    </div>
+}

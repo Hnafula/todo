@@ -1,0 +1,57 @@
+@(title: String)
+@main(title){
+        <div class ="container">
+            <h1 class="text-warning bg-success text-center">Travel todo items</h1>
+
+                <a href ="/addItem" class="pull-right btn btn-group btn-info btn-sm"><i class="glyphicon glyphicon-plus">add</i></a>
+                <table class="table table-bordered table-horver table-responsive" id ="table2">
+                    <thead>
+                        <tr class = "danger">
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Item Details</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                <thead>
+                    <tbody>
+                        @for(item <- Items.findAllItems()) {
+                        <tr class="success">
+                        <td>@item.id</td>
+                        <td>@item.itemname</td>
+                        <td>@item.itemdetails</td>
+                        <td><a href="/editingItem?id=@item.id" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-plus">edit</i></a></td>
+                        <!--<td><a href ="E:/thecodevillage/htmlIntro/edititem.html"><button type ="button" class="btn btn-success">edit</button></a></td>-->
+                        <td><a href="/deleteItem?id=@item.id" class="btn btn-success">delete</a></td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+        </div>
+        <script>
+
+		/*	$(function() {
+
+                console.log("hello good people");
+                console.log("Jane");
+                console.log("joseph");
+                console.log("Julian");
+                alert("this is javascript");
+                var a=10;
+                var b=40;
+                console.log(a+b);
+                alert(a+b);
+                function add(a,b){
+                    return a+b;
+                }
+                if("#table2==empty")
+                {
+                    alert("table cannot be empty");
+                }
+
+            });
+*/
+
+			</script>
+
+}

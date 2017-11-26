@@ -1,0 +1,42 @@
+@(title: String, id: Long, edititem: Items)
+@main(title){
+  <body>
+
+    <div class ="container">
+      <h3>Edit item</h3>
+      <form name ="form2" method ="post" class="form horizontal" action ="/editingOfItem">
+
+        <div class ="row">
+          <div class = "col-sm-6">
+            <div class = "form-group">
+             <!-- <label for ="CategoryID" class ="label label-default">CategoryID:</label>-->
+              <input type ="hidden" name="categoryID" id ="categoryID" class ="form-control" value="">
+              <input type ="hidden" name="id" id ="id" class ="form-control" value="@id">
+            </div>
+          </div>
+        </div>
+        <div class ="row">
+          <div class = "col-sm-6">
+            <div class = "form-group">
+              <label for ="name" class ="label label-default">Name:</label>
+              <input type ="text" name="itemname" id="name" class="form-control" value="@edititem.itemname">
+            </div>
+          </div>
+        </div>
+
+        <div class ="row">
+          <div class = "col-sm-6">
+            <div class = "form-group">
+              <label for ="textarea" class="label label-default">Description:</label>
+              <textarea cols ="76%" rows ="" name="itemdetails">@edititem.itemdetails</textarea>
+            </div>
+          </div>
+        </div>
+
+        <br /><br />
+        <button type="submit"  class="btn btn-info btn-sm"><i class="glyphicon glyphicon-plus"> Submit</i></button>
+          <!-- <a href="home.html"><input type = "submit" value="submit" class="btn btn-primary"></a> -->
+      </form>
+
+    </div>
+}
